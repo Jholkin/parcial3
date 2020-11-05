@@ -34,11 +34,14 @@ dd($value->result->value);
     public function convert($id)
     {
         $v = Venta::where('id',$id)->get();
+        //$ve = $v[0];
         $price = $v[0]->price_total;
         //dd($price);
         $venta = new Venta();
         $price = $venta->convert($v[0]);
-        dd($price);
+        //dd($ve->id);
+        //dd($price);
+        return view("ventas.venta", ['venta' => $v[0], 'new_price' => $price]);
     }
 
     public function insert()

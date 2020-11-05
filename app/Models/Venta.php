@@ -27,7 +27,7 @@ class Venta extends Model
         $price = $product->price_total;
         //dd($price);
         $new_price = $convert->convert($price);
-        dd($new_price);
+        //dd($new_price);
         return $new_price;
     }
 }
